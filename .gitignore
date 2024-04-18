@@ -1,0 +1,5 @@
+.venv
+venv
+env
+pyvenv.gfg
+__pycache__
