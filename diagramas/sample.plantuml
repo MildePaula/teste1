@@ -1,0 +1,31 @@
+@startuml funcionalidades
+left to right direction
+skinparam packageStyle rectangle
+
+actor Aluno
+actor Professor
+rectangle Sistema {
+    usecase "Login"
+    usecase "Escolher Tipo de Entrevista" as EscolherTipo
+    usecase "Agendar Entrevista" as Agendar
+    usecase "Reagendar ou Cancelar Entrevista" as ReagendarCancelar
+    usecase "Realizar Teste de Nivelamento" as RealizarTeste
+    usecase "Baixar Script de Estudo" as BaixarScript
+    usecase "Participar da Entrevista" as Participar
+
+    Aluno --> (Login)
+    Aluno --> (EscolherTipo)
+    Aluno --> (Agendar)
+    Aluno --> (ReagendarCancelar)
+    Aluno --> (RealizarTeste)
+    Aluno --> (BaixarScript)
+    Aluno --> (Participar)
+    Professor --> (Participar)
+
+    (Agendar) ..> (Aluno) : Confirmação
+    (Agendar) ..> (Professor) : Confirmação
+    (ReagendarCancelar) ..> (Aluno) : Confirmação
+    (ReagendarCancelar) ..> (Professor) : Confirmação
+}
+@enduml
+
